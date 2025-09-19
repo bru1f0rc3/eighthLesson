@@ -16,7 +16,7 @@ public class fivethTask {
         while (true){
             switch (ChatCommand.valueOf(commandValue)) {
                 case MAP:
-                    System.out.println("Карта пунктов приёма вторсырья: " + MAP_LINK)
+                    System.out.println("Карта пунктов приёма вторсырья: " + MAP_LINK);
                     break;
                 case RECYCLABILITY:
                     System.out.println("Введите код переработки:");
