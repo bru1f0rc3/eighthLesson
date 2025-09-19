@@ -14,17 +14,17 @@ public class fivethTask {
 
         String commandValue = scanner.nextLine();
         while (true){
-            switch (commandValue) {
-                case "MAP" -> System.out.println("Карта пунктов приёма вторсырья: " + MAP_LINK);
-
-                case "RECYCLABILITY" -> {
+            switch (ChatCommand.valueOf(commandValue)) {
+                case MAP:
+                    System.out.println("Карта пунктов приёма вторсырья: " + MAP_LINK)
+                    break;
+                case RECYCLABILITY:
                     System.out.println("Введите код переработки:");
                     int code = scanner.nextInt();
                     scanner.nextLine();
                     isRecycled(code);
-                }
-
-                case "BONUS" -> {
+                    break;
+                case BONUS:
                     System.out.println("Введите количество вторсырья, кг:");
                     int weight = scanner.nextInt();
                     scanner.nextLine();
@@ -33,11 +33,9 @@ public class fivethTask {
                     int bonusPoints = weight * coefficient;
 
                     System.out.println("Количество бонусных баллов: " + bonusPoints + ".");
-                }
-
-                case "EXIT" -> {return;}
-
-                default -> System.out.println("Неизвестная команда. Попробуйте снова.");
+                    break;
+                default:
+                    return;
             }
         }
     }
